@@ -1,0 +1,83 @@
+<div class="container mt-5">
+
+  <h1>STUDENT MANAGEMENT </h1>
+  <a [routerLink]="['/read']" class="btn  btn-primary" data-bs-dismiss="modal" >Read</a>
+  &nbsp;
+  
+  </div>
+
+<div class="container mt-5">
+    <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+       <strong>{{successmsg}}</strong>
+    </div>
+  
+     <div *ngIf="errormsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>{{errormsg}}</strong>
+     </div>
+    
+   <form [formGroup]="userForm">
+         <div class="col-lg-4 mt-2 ">
+             <label><b>First Name</b></label>
+              <input type="text" class ="form-control" formControlName="first_name"placeholder="Enter your firstname">
+             
+             <span style="color: red;" *ngIf="fname && fname.invalid && fname.touched">This Input is not Valid</span>
+          
+         </div>
+         <div class="col-lg-4 mt-2  ">
+            <label><b>Last Name</b></label>
+              <input type="text" class ="form-control" formControlName="last_name" placeholder="Enter your lastname">
+              <span style="color: red;" *ngIf="lname && lname.invalid && lname.touched">This Input is not Valid</span>
+           
+        </div>
+      
+        <div class="col-lg-4 mt-2">
+            <label for="date"><b>Date Of Birth :</b></label>
+              <input type="date"  class="form-control" formControlName="date_of_birth">  
+        </div>
+
+        <div class="col-lg-4 mt-2  ">
+          <label ><b>Email</b></label>
+             <input type="email" class ="form-control" formControlName="email_id" placeholder="Enter your email">
+            
+             <span style="color: red;" *ngIf="email && email.invalid && email.touched">This Input is not Valid</span>
+          
+            </div>
+      
+      
+        <div class="col-lg-4 mt-2  ">
+          <label><b>Mobile Number</b></label>
+          <input type="text" class="form-control"  formControlName="mobile_number" placeholder="Enter your mobile number">
+          <span style="color: red;" *ngIf="mobile && mobile.invalid && mobile.touched">This Input is not Valid</span>
+           
+        </div>
+      
+        <div class="col-lg-4 mt-2">
+          <label><b>Roll Number</b></label>
+            <input type="text" class ="form-control" formControlName="roll_number" placeholder="Enter your roll number">
+          <span style="color: red;" *ngIf="roll && roll.invalid && roll.touched">This Input is not Valid</span>
+        </div>
+       <div class="col-lg-4 mt-2 ">
+          <label><b>Department</b></label>
+            <select class="form-control" formControlName="department"  aria-label="Default select example">
+              <option *ngFor="let us of departmentdata">{{us.department}}</option>
+            </select>
+       </div>
+      <div class="col-lg-4 mt-2">
+          <label><b>YEAR OF STUDYING :</b></label><br>
+              <input type="radio"  formControlName="year" value="First Year">
+          <label for="year1">first year</label><br>
+              <input type="radio" formControlName="year"  value="Second Year">
+          <label for="year2">second year</label><br>  
+              <input type="radio" formControlName="year"  value="Third Year">
+          <label for="year3">third year</label><br>
+              <input type="radio" formControlName="year"  value="Final Year">
+          <label for="year4">final year</label><br>
+       </div>
+      <div class="col-lg-4 mt-2" *ngIf="!getparamid" (click)="userSubmit()">
+       <button [disabled]="userForm.invalid" class="btn btn-primary btn-sm">CREATE    </button>
+      </div>
+      <div class="col-lg-4 mt-2" *ngIf="getparamid" (click)="userUpdate()">
+        <button  class="btn btn-dark btn-sm">UPDATE</button>
+      </div>
+  </form>
+</div>

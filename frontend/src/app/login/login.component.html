@@ -1,0 +1,75 @@
+<div class="body">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card student">
+              <div class="text-center">
+               <h1>Student Login</h1>
+               <h6></h6>
+              </div>
+        <form [formGroup] = "loginForm" >
+              <div class="mb-3">
+                <label for="date"><b>Roll Number</b></label>
+                  <input type="text"  formControlName="roll_number"  class="form-control" >  
+                  <span style="color: white;"  *ngIf="roll_number   && roll_number.invalid && roll_number.touched">This Input is not Valid</span>
+      
+              </div><br>
+              <div class="mb-3">
+                <label for="date"><b>Date Of Birth :</b></label>
+                  <input type="date" formControlName="date_of_birth" class="form-control" >   
+                  <span style="color: white;"  *ngIf="date_of_birth && date_of_birth.invalid && date_of_birth.touched" >This Input is not Valid</span>
+       
+                </div><br>
+              <div class="mb-3"  (click)="handleSubmit()" >
+                 <button class="btn btn-success btn-sm" >Login</button>
+              </div>
+           </form>
+       </div>
+     </div>
+   </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-6">
+          <div class="card staff">
+             <div class="text-center">
+                <h1>Staff Login</h1>
+             </div>
+             <form  (submit)="login()">
+             
+              <div class="form-group" >
+                <h1 class="h3 mb-3 font-weight-normal"></h1>
+                <div class="mb-3">
+                  <label for="email"><b>email</b></label>
+               <input type="email" class="form-control"  name="email" placeholder="" [(ngModel)]="credentials.email">
+                </div>
+                </div>
+                <div class="form-group">
+                    <label for="email"><b>password</b></label>
+                 <input type="password" class="form-control"  name="email" placeholder="" [(ngModel)]="credentials.password"> 
+                  </div><br>
+                 <button  class="btn btn-success btn" type="submit">sign in</button>
+                 </form>
+        <!-- <form [formGroup] = "staffForm" >
+          <div class="mb-3">
+             <label for="date"><b>Email_id</b></label>
+                <input type="text"  formControlName="email_id"  class="form-control" > 
+                <span style="color:white;"  *ngIf="email_id && email_id.invalid && email_id.touched">This Input is not Valid</span>
+       
+          </div><br>
+  <div class="mb-3">
+    <label for="date"><b>Password :</b></label>
+      <input type="password" formControlName="password" class="form-control" >  
+      <span style="color:white;"  *ngIf="password && password.invalid && password.touched" >This Input is not Valid</span>
+        
+  </div><br>
+  <div class="mb-3" (click)="staffsubmit()">
+     <button class="btn btn-success btn-sm">Login</button>
+  </div>
+</form> -->
+
+</div>
+</div>
+</div>
+</div>
+</div>

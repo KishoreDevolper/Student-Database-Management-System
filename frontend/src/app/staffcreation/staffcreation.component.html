@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card student">
+              <div class="text-center">
+               <h1>Staff ID Creation</h1>
+               <h6></h6>
+              </div>
+        <form [formGroup] = "StaffLoginIDCreation" >
+              <div class="mb-3">
+                <label ><b>Email</b></label>
+                  <input type="text"  formControlName="email_id"  class="form-control" >  
+                  <span style="color: red;"  *ngIf="email_id   && email_id.invalid && email_id.touched">This Input is not Valid</span>
+      
+              </div><br>
+              <div class="mb-3">
+                <label for="date"><b>Password :</b></label>
+                  <input type="password" formControlName="password" class="form-control" >   
+                  <span style="color:red;"  *ngIf="password && password.invalid && password.touched" >This Input is not Valid</span>
+       
+                </div><br>
+              <div class="mb-3"  (click)="handleSubmit()" >
+                 <button class="btn btn-success btn-sm" >Login</button>
+              </div>
+           </form>
+       </div>
+     </div>
+   </div>
+</div>

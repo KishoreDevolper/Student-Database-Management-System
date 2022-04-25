@@ -1,0 +1,11 @@
+.card.student{
+    margin-top: 10px;
+    color:black;
+   
+    border:none;
+    width:500px;
+    padding:40px;
+    position: absolute;
+    top:10%;
+    right:35%;
+}

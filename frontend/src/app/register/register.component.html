@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mt-5 mx-auto">
+          <form (submit)="register()">
+              <h1 class="h3 mb-3 font-weight-normal">Sign Up Details</h1>
+              <div class="form-group">
+                  <label >first name</label>
+               <input type="text" class="form-control"  name="first_name" placeholder="" [(ngModel)]="credentials.first_name">
+                </div>
+                <div class="form-group">
+                    <label>last name</label>
+                 <input type="email" class="form-control"  name="last_name" placeholder="" [(ngModel)]="credentials.last_name"> 
+                  </div>
+                  <div class="form-group">
+                    <label >email</label>
+                 <input type="email" class="form-control"  name="email" placeholder="" [(ngModel)]="credentials.email"> 
+                  </div>
+                  <div class="form-group">
+                    <label >password</label>
+                 <input type="password" class="form-control"  name="password" placeholder="" [(ngModel)]="credentials.password"> 
+                  </div>
+<button class="btn btn-lg btn-primary btn-block " type="submit">sign in</button>
+          </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+
+<div class="kishore">
+  <div class="container mt-5">
+    <h1>STUDENT MANAGEMENT </h1>
+     <a [routerLink]="['/read']" class="btn btn-primary">Back</a>
+  </div>
+
+<div class="container mt-5">
+    </div>
+  
+ 
+    <ul class="list-group" *ngFor="let us of readData ">
+      <label  class="col-lg-4 mt-2 list-group-item"><b>First Name : &nbsp;</b>{{us.first_name}}</label>
+      <label  class="col-lg-4 mt-2 list-group-item"><b>Last Name : &nbsp;</b>{{us.last_name}}</label>
+      <label  class="col-lg-4 mt-2 list-group-item"><b>Date Of Birth : &nbsp;</b>{{us.date_of_birth}}</label>
+      <label  class="col-lg-4 mt-2 list-group-item"><b>email : &nbsp;</b>{{us.email_id}}</label>
+      <label  class="col-lg-4 mt-2 list-group-item"><b>Mobile : &nbsp;</b>{{us.mobile_number}}</label>
+      <label  class="col-lg-4 mt-2 list-group-item"><b>Roll number : &nbsp;</b>{{us.roll_number}}</label>
+      <label  class="col-lg-4 mt-2 list-group-item"><b>Department : &nbsp;</b>{{us.department}}</label>
+      <label  class="col-lg-4 mt-2 list-group-item"><b>Year : &nbsp;</b>{{us.year}}</label>
+      <a [routerLink]="['/marky',(us.id)]" class="col-lg-4 mt-2 btn btn-sm btn-primary" data-bs-dismiss="modal" >mark Details</a>
+      <a [routerLink]="['/create',(us.id)]" class="col-lg-4 mt-2 btn btn-sm btn-success" data-bs-dismiss="modal" >update</a>
+     <!-- Button trigger modal -->
+            <button type="button" class="col-lg-4 mt-2 btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</button>
+
+     <!-- Modal -->
+       <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="staticBackdropLabel">Student Details</h5>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+        <div class="modal-body">
+              Sure Do You Want to Delete?    
+        </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+               <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteID(us.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+       &nbsp;
+  
+    </ul>
+   </div>
+   

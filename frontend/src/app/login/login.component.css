@@ -1,0 +1,25 @@
+.body{
+    background-color: aqua;
+}
+.card.student{
+    margin-top: 10px;
+    background-color: rgb(32, 140, 155);
+    border:none;
+    width:500px;
+    color: wheat;
+    padding:40px;
+    position: absolute;
+    top:10%;
+    left:55%;
+}
+.card.staff{
+    margin-top: 10px;
+    color:black;
+    background-color:rgb(177, 177, 46);
+    border:none;
+    width:500px;
+    padding:40px;
+    position: absolute;
+    top:10%;
+    right:55%;
+}

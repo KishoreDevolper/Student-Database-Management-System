@@ -1,0 +1,76 @@
+<a [routerLink]="['/read']" class="btn  btn-primary" data-bs-dismiss="modal" >Back</a>
+<form [formGroup]="MarkyForm">
+  <div class="col-lg-4 mt-2  " >
+   
+       <input type="hidden" class ="form-control" formControlName="student_id" placeholder="Enter The roll_number">
+      
+  </div><br>
+      
+    <div class="col-lg-4 mt-2 ">
+          <label><b>Subject Name</b></label>
+           <select class="form-control" formControlName="subject_name" aria-label="Default select example">
+              <option>Subject Name</option>
+              <option *ngFor="let us of getsubjectData">{{us.subject_name}}</option>
+           </select>
+       </div>       
+       <br> 
+       <div class="col-lg-4 mt-2">
+        <label><b>Mark</b></label>
+         <input type="text"  class ="form-control" formControlName="mark" placeholder="Enter The Mark"[(ngModel)]="mark">
+       </div>
+      <div class="col-lg-4 mt-2  ">
+         <input type="hidden"  class ="form-control" formControlName="percentage" placeholder="Enter The percentage" [(ngModel)]="percentage">
+      </div>
+   
+   
+   
+  
+  
+   <div class="col-lg-4 mt-2  ">
+     
+     
+    
+        <input type="hidden" class ="form-control" formControlName="is_passed" placeholder="Enter The Result" [(ngModel)]="is_passed">
+       
+     
+       </div>
+       
+       <div class="col-lg-4 mt-2" (click)="MarkSubmit()">
+  
+        <button  (click)="set()" class="btn btn-dark btn-sm">UPDATE</button>
+  
+   </div>
+ 
+  </form>
+  <br><br><br>
+
+
+
+
+
+
+<!--  -->
+<table class="table table-bordered" >
+    <thead>
+    <tr>
+      <th scope="col">Subject Name</th>
+      <th scope="col">Mark</th>
+      <th scope="col">percentage</th>
+      <th scope="col">Result</th>
+     
+
+     
+    </tr>
+    </thead>
+    
+    <tbody>
+    <tr *ngFor="let us of readData ">
+      <td>{{us.subject_name}}</td>
+      <td>{{us.mark}}</td>
+      <td>{{us.percentage}}</td>
+      <td>{{us.is_passed}}</td>
+    </tr>
+    </tbody>
+    </table> 
+    
+    

@@ -1,0 +1,28 @@
+<a [routerLink]="['/login']" class="btn  btn-danger" data-bs-dismiss="modal" >Logout</a>     
+<br><br>   
+
+<ul class="list-group" *ngFor="let us of readData">
+              
+    <label  class="list-group-item"><b>First Name : &nbsp;</b>{{us.first_name}}</label>
+    <label  class="list-group-item"><b>Last Name : &nbsp;</b>{{us.last_name}}</label>
+    <label  class="list-group-item"><b>Date Of Birth : &nbsp;</b>{{us.date_of_birth}}</label>
+    <label  class="list-group-item"><b>email : &nbsp;</b>{{us.email_id}}</label>
+    <label  class="list-group-item"><b>Mobile : &nbsp;</b>{{us.mobile_number}}</label>
+    <label  class="list-group-item"><b>Roll number : &nbsp;</b>{{us.roll_number}}</label>
+    <label  class="list-group-item"><b>Department : &nbsp;</b>{{us.department}}</label>
+    <label  class="list-group-item"><b>Year : &nbsp;</b>{{us.year}}</label>
+   <a  class="btn btn-primary " [routerLink]="['/mark',(us.id)]">Mark Details</a>
+ </ul>
+
+ <ul class="list-group" *ngFor="let us of readstudentData">
+              
+  <label  class="list-group-item"><b>First Name : &nbsp;</b>{{us.first_name}}</label>
+  <label  class="list-group-item"><b>Last Name : &nbsp;</b>{{us.last_name}}</label>
+  <label  class="list-group-item"><b>Date Of Birth : &nbsp;</b>{{us.date_of_birth}}</label>
+  <label  class="list-group-item"><b>email : &nbsp;</b>{{us.email_id}}</label>
+  <label  class="list-group-item"><b>Mobile : &nbsp;</b>{{us.mobile_number}}</label>
+  <label  class="list-group-item"><b>Roll number : &nbsp;</b>{{us.roll_number}}</label>
+  <label  class="list-group-item"><b>Department : &nbsp;</b>{{us.department}}</label>
+  <label  class="list-group-item"><b>Year : &nbsp;</b>{{us.year}}</label>
+ <a  class="btn btn-primary " [routerLink]="['/mark',(us.id)]">Mark Details</a>
+</ul>

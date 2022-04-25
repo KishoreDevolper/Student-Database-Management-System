@@ -1,0 +1,26 @@
+    
+   <!--  -->
+<table class="table table-bordered" >
+    <thead>
+    <tr>
+      <th scope="col">Subject Name</th>
+      <th scope="col">Mark</th>
+      <th scope="col">percentage</th>
+      <th scope="col">Result</th>
+    </tr>
+     </thead>
+  <tbody>
+    <tr *ngFor="let us of readData ">
+      <td>{{us.subject_name}}</td>
+      <td>{{us.mark}}</td>
+      <td>{{us.percentage}}</td>
+      <td>{{us.is_passed}}</td>
+      
+    </tr>
+   
+    </tbody>
+    </table> 
+    <div>
+      
+      <button class="btn btn-primary btn-sm"*ngFor="let us of readData" [routerLink]="['/student',(us.student_id)]">back</button> 
+    </div>
